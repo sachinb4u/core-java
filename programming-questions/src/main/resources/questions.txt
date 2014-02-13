@@ -1,0 +1,187 @@
+Programming Interview Questions:
+
+String ============
+1) Write code to check a String is palindrome or not?                         DONE
+
+    public static boolean checkPalindromeWithCharArray(String str){
+
+        if (str == null || "".equals(str.trim()))
+            return false;
+
+        char[] chArr = str.toCharArray();
+
+        int length = chArr.length;
+
+        for (int i=0, j = length-1; i < Math.abs(length/2); i++, j--){
+            char first = chArr[i];
+            char last = chArr[j];
+            System.out.println(" -> " + first + " vs " + last + " <- ");
+            if(first != last){
+               return false;
+            }
+        }
+
+        return true;
+    }
+
+
+2) Write a method which will remove any given character from a String?        DONE
+
+    private static String removeChar(String source, char ch){
+
+        char[] strArr = source.toCharArray();
+        StringBuilder builder = new StringBuilder();
+
+        for (char aStrArr : strArr) {
+            if (ch != aStrArr) {
+                builder.append(aStrArr);
+            }
+        }
+
+       return builder.toString();
+    }
+
+3) Print all permutation of String both iterative and Recursive way?
+4) Write a function to find out longest palindrome in a given string?
+
+Array ==============
+
+5) In an array 1-100 numbers are stored, one number is missing how do you find it?     DONE
+6) In an array 1-100 exactly one number is duplicate how do you find it?
+7) In an array 1-100 many numbers are duplicates, how do you find it?
+
+http://stackoverflow.com/questions/5766936/find-the-missing-and-duplicate-elements-in-an-array-in-linear-time-and-constant
+
+8)Given two arrays, 1,2,3,4,5 and 2,3,1,0,5 find which number is not present in the second array.
+9) How do you find second highest number in an integer array?                          DONE
+
+LinkedList ====================
+
+10) How do you find middle element of a linked list in single pass?       DONE
+	To answer this programming question I would say you start with simple solution on which you traverse the LinkedList until you find the tail of linked list where it points to null to find the length of linked list  and then reiterating till middle. After this answer interviewer will ask you find the middle element in single pass and there you can explain that by doing space-time tradeoff you can use two pointers one incrementing one step at a time and other incrementing two step a time, so when first pointer reaches end of linked second pointer will point to the middle element.
+11) How do you find 3rd element from last in single pass?
+12) How do you find if there is any loop in singly linked list? How do you find the start of the loop?
+	This programming question can also be solved using 2 pointers and if you increase one pointer one step at a time and other as two steps at a time they will meet in some point if there is a loop.
+13) How do you reverse a singly linked list?
+
+Binary Tree ==================
+
+14) How do you find depth of binary tree?                       DONE
+15) Write code to print InOrder traversal of a tree?            DONE
+16) Print out all leaf node of a binary tree?                   DONE
+
+http://cslibrary.stanford.edu/110/BinaryTrees.html#java
+
+Searching & Sorting ===============
+
+17) Write a program to sort numbers using quick sort?
+18) Write a program to implement binary search algorithm
+19) How do you sort Java object using Comparator?
+
+Numbers ===============
+
+19) Write code to check whether a no is power of two or not?
+20) Write a program to check whether a no is palindrome or not?
+check out this post which shows how to reverse number in Java and can be used to find if its palindrome or not.
+21) Write code to check whether a no is Armstrong no or not
+Here is a Java program to find Armstrong number, you can use same logic to write code in any other programming language like C and C++.
+22) Write a program to find all prime number up to a given numbers?
+Here is another Java program to find prime numbers and print them. By using logic demonstrated in this program; you can write similar program in C and C++.
+23) Write function to compute Nth Fibonacci number? Both iterative and recursive?
+
+General ==================
+
+24) Write a program to find out if two rectangles R1 and R2 are overlapping?
+35) You need to write a function to climb n steps you can climb either 1 step at a time or 2 steps a time, write a function to return number of ways to climb a ladder with n step.
+26) Write code for Generate Random No in a range from min to max?
+27) Write program for word-wrap which should work on any screen size?
+28) Design an algorithm to find the frequency of occurrence of a word in an article?
+29) Write a program to implement blocking queue in Java?
+30) Write a program for producer-consumer problem?
+
+Collections & Threads
+========================
+
+31) Write a Timed Queue to remove the most stale element from the queue  , it should pop the element at particular interval
+
+-- From Concurrency in Practice
+
+32) Write a program to demonstrate ExecutorService and CompletionService
+
+33) Write  a program to get the travel quotes from different vendors, parallelism of quote task. Page-134 listing 6.17
+
+34) Write a program of PrimeGenerator with start, pause, stop / cancel and timed run options for user..
+
+35) Rewrite review import program using Multi-threading, paralleled file reading and inserting in database. Multiple files can be read parallel and processed UI should show progress bar, details of record getting processed, start, pause and stop button. Details or status bar.
+
+35) LogWriter or logging service with multiple producer and single consumer. Listing 7.13 Page 152
+
+
+Another Set of Questions:
+=========================
+
+1) FizzBuzz problem : Write a Java program that prints the numbers from 1 to 50. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz"
+	This is also one of the classical programming questions, which is asked on any Java programming or technical interviews. This questions is very basic but can be very trick for programmers, who can't code, that's why it is used to differentiate programmers who can do coding and who can't. Here is a sample Java program to solve FizzBuzz problem :
+
+public class FizzBuzzTest{
+
+    public static void main(String args[]){
+
+        for(int i = 1; i <= 50; i++) {
+            if(i % (3*5) == 0) System.out.println("FizzBuzz");
+            else if(i % 5 == 0) System.out.println("Buzz");
+            else if(i % 3 == 0) System.out.println("Fizz");
+            else System.out.println(i);
+        }
+    }
+
+}
+
+2) Write a Comparator in Java to compare two employees based upon there name, departments and age?
+
+3) Write a Java program to check if a number is Armstrong or not ?
+
+4) Write a Java program to prevent deadlock in Java ?
+
+5) Write Java program to reverse String in Java without using API functions ?
+
+6) Write a Java program to find if a number is prime number or not
+
+7) How to Swap two numbers without using third variable in Java?
+
+8) Create a Java program to find middle node of linked list in Java in one pass?
+
+9) How to find if a linked list contains cycle or not in Java?
+
+10) Implement Producer Consumer design Pattern in Java using wait, notify and notifyAll method in Java?
+
+11) Write a Java program to calculate Factorial of a number in Java?
+
+12) Write a program in Java to check if a number is even or odd in Java?
+
+13) Write a program in Java to find out if a number is prime in Java?
+
+14) Write Java program to check if a number is palindrome in Java?
+
+15) How to find if a number is power of 2 in Java? (1,2, 4 power of 2, 3 is not)
+
+16) Write program to sort an integer array without using API methods?
+
+17) Write Java program to check if a number is Armstrong number or not? (input 153 output true,  123 output false)
+	An Armstrong number of 3 digit is a number for which sum of cube of its digits are equal to number e.g. 371 is an Armstrong number because 3*3*3 + 7*7*7 + 1*1*1 = 371). See here for sample Java program to check if a number is Armstrong number or not.
+
+18) Write a program in Java to reverse any String without using StringBuffer?
+
+http://java67.blogspot.in/2013/01/10-programming-questions-and-exercises.html
+
+http://javabuddy.hubpages.com/hub/10-most-tricky-question-in-java
+
+http://java67.blogspot.in/2012/08/10-java-coding-interview-questions-and.html
+
+http://javarevisited.blogspot.in/2011/04/top-20-core-java-interview-questions.html
+
+http://javarevisited.blogspot.sg/2011/06/top-programming-interview-questions.html
+
+http://java67.blogspot.fr/2012/08/5-thread-interview-questions-answers-in.html
+
+
