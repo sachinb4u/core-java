@@ -14,13 +14,12 @@ public class ReverseString {
 
 	public static void main(String[] args) {
 
-		System.out.println(reverseString("HelloWorld"));
-		System.out.println(reverseStringWithoutNewArray("AbCdEfGh"));
+		System.out.println(reverseString("HelloWorld".toCharArray()));
+		System.out.println(reverseStringWithoutNewArray("AbCdEfGh".toCharArray()));
 	}
 
 	
-	private static String reverseString(String str){
-		char[] charArr = str.toCharArray();
+	private static String reverseString(char[] charArr){
 		
 		char[] reverseArray = new char[charArr.length];
 		
@@ -37,8 +36,7 @@ public class ReverseString {
 	 * @param str
 	 * @return
 	 */
-	public static String reverseStringWithoutNewArray(String str){
-		char[] sourceArr = str.toCharArray();
+	public static String reverseStringWithoutNewArray(char[] sourceArr){
 		
 		int mid = sourceArr.length / 2;
 		
@@ -55,13 +53,13 @@ public class ReverseString {
 		
 		@Test
 		 public void testReverseStringWithoutNewArray(){
-			String result1 = ReverseString.reverseStringWithoutNewArray("");
+			String result1 = ReverseString.reverseStringWithoutNewArray("".toCharArray());
 			Assert.assertEquals(result1, "");
 			
-			String result2 = ReverseString.reverseStringWithoutNewArray("sachin");
+			String result2 = ReverseString.reverseStringWithoutNewArray("sachin".toCharArray());
 			Assert.assertEquals(result2, "nihcas1");
 			
-			String result3 = ReverseString.reverseStringWithoutNewArray("heLlo");
+			String result3 = ReverseString.reverseStringWithoutNewArray("heLlo".toCharArray());
 			Assert.assertEquals(result3, "olLeh");
 		}
 		

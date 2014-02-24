@@ -15,7 +15,7 @@ public class SortMain {
         String[] strArr = new String[]{"sd", "ww", "ert", "rt", "abc"};
 
         //bubbleSort();
-        insertionSort(intArr,strArr);
+//        insertionSort(intArr,strArr);
     }
 
 
@@ -25,9 +25,5 @@ public class SortMain {
         System.out.println(Arrays.toString(BubbleSort.sort(new Integer[]{2, 4, 5, 6, 12, 23})));
     }
 
-    private static void insertionSort(Integer[] intArr, String[] strArr){
-        System.out.println(Arrays.toString(InsertionSort.sort(intArr)));
-        System.out.println(Arrays.toString(InsertionSort.sort(strArr)));
-        System.out.println(Arrays.toString(InsertionSort.sort(new Integer[]{2, 4, 5, 6, 12, 23})));
-    }
+  
 }
