@@ -19,7 +19,10 @@ public class MergeSort {
 	}
 
 	private static int[] mergeSort(int[] arr) {
-
+		/**
+		 * Recursive function, divides sorting upto two element array recursively.
+		 * 
+		 */
 		if (arr.length < 2)
 			return arr;
 
@@ -34,12 +37,13 @@ public class MergeSort {
 
 		int lo = 0, hi = arr.length;
 		int mid = lo + (hi - lo) / 2;
-
+		// divide array into two copies , left and right from middle
 		int[] left = Arrays.copyOfRange(arr, lo, mid);
 		int[] right = Arrays.copyOfRange(arr, mid, hi);
 		
 		System.out.println("Sort : " + Arrays.toString(arr) + " , Left : " + Arrays.toString(left) + " , Right : " + Arrays.toString(right) + " , mid = " + mid);
 		
+		// merge left and right sorted arrays
 		return merge(mergeSort(left), mergeSort(right));
 
 	}

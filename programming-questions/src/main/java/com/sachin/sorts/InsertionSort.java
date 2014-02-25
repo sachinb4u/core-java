@@ -22,15 +22,18 @@ public class InsertionSort {
     }
     
     private static void sort(int[] arr){
-    	for(int i = 1 ; i < arr.length; i++){
-    		int j;
-    		 int key = arr[i];
-    		 for(j = i-1; j >= 0 && arr[j] > key; j--){
-    			 arr[j+1] = arr[j];
+    	for(int i = 0 ; i < arr.length; i++){
+    		 for(int j = i; j > 0 && arr[j -1] > arr[j]; j--){
+    			 swap(arr, j-1, j);
     		 }
-    		 arr[j+1] = key;
-    		 System.out.println(Arrays.toString(arr) + " Key = " + key );
+    		 System.out.println(Arrays.toString(arr) + " Key = " + arr[i] );
     	}
     	
     }
+    
+	private static void swap(int[] arr, int start, int end) {
+		int tmp = arr[start];
+		arr[start] = arr[end];
+		arr[end] = tmp;
+	}
 }
